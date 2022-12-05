@@ -10,7 +10,15 @@ def pomiarczasu(funkcja):
         print(f"czas wykonania funkcji: {endtime-starttime} s")
     return wrapper
 
+
+def sleep(funkcja):
+    def wrapper():
+        time.sleep(3)
+        funkcja()
+    return wrapper
+
 @pomiarczasu
+@sleep
 def big_lista():
     sum([i**9 for i in range(10000000)])
 
@@ -22,3 +30,20 @@ def bl_2():
     sum(lt)
 
 bl_2()
+
+
+#przypadek 2
+def decorator_f(wrapped_function):
+    def wrapper(a,b,*args,**kwargs):
+        return wrapped_function(a,b,*args,**kwargs)
+    return wrapper
+@decorator_f
+def wrapped_function(a,b,*args,**kwargs):
+    print("wnętrze funkcji opakowanej")
+    print(f'a={a}, b={b}')
+    print(f'args = {args}')
+    print(f'kwargs = {kwargs}')
+
+a = 19
+b = 44
+wrapped_function(a,b,30,55,c=90,f=109)

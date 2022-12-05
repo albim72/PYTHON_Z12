@@ -61,3 +61,18 @@ def info(i):
     print(f"informacja: {i}")
 
 info("bardzo ważne słowo...")
+
+#przypadek 4
+def repeater(n):
+    def wrapper(funkcja):
+        def inner(*args):
+            for i in range(n):
+                funkcja(*args)
+        return inner
+    return wrapper
+
+@repeater(n=6)
+def komunikat(k,n):
+    print(f"wynik dzielennia: {n/k}")
+
+komunikat(45,67)

@@ -31,3 +31,17 @@ for i in wznowienie(6,8):
     if i == 1001:
         continue
     print(f'zwrócono wartość: {i}')
+
+#przypadek 3
+
+def genret():
+
+    for i in range(8):
+        if i==5:
+            print("przerwanie")
+            return
+        else:
+            yield i
+
+for t in genret():
+    print(t)

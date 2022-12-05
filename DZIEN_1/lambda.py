@@ -32,3 +32,7 @@ print(parzysta)
 #stwórz nową listę cube i wypełnij ją wszytskimi wartościami z listy nb podniesionymi do potęgi trzeciej
 cube = list(map(lambda x:x**3,nb))
 print(cube)
+
+
+mojalista = [i**5+21 for i in range(1000000) if i%2==0]
+print(mojalista)

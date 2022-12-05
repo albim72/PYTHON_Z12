@@ -47,3 +47,17 @@ def wrapped_function(a,b,*args,**kwargs):
 a = 19
 b = 44
 wrapped_function(a,b,30,55,c=90,f=109)
+
+#przypadek 3
+
+def debug(funkcja):
+    def wrapper(*args,**kwargs):
+        print(f'wołana funkcja: {funkcja.__name__}')
+        funkcja(*args)
+    return wrapper
+
+@debug
+def info(i):
+    print(f"informacja: {i}")
+
+info("bardzo ważne słowo...")

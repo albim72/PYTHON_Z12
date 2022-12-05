@@ -24,3 +24,17 @@ zawody = ['trening','siła','pływanie','podbiegi','dieta']
 iterators = itertools.cycle(zawody)
 for i in range(12):
     print(next(iterators),end=" ")
+
+#przypadek 4
+
+print("wyświetlanie wartości liczbowych..")
+print(list(itertools.repeat(25,4)))
+
+print("wyświetlanie iloczynu kartezjańskiego: ")
+print(list(itertools.product([1,2],repeat=2)))
+
+print("wyświetlanie iloczynu kartezjańskiego kontenerów: ")
+print(list(itertools.product(['trening','siła','pływanie','podbiegi','dieta'],'2')))
+
+print("wyświetlanie iloczynu kartezjańskiego kontenerów: ")
+print(list(itertools.product('ABC',[45,7,89])))

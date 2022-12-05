@@ -17,4 +17,10 @@ for i in itertools.cycle('AB'):
     else:
         print(f"i = {i}")
         count += 1
-        
+
+#przypadek 3
+zawody = ['trening','siła','pływanie','podbiegi','dieta']
+
+iterators = itertools.cycle(zawody)
+for i in range(12):
+    print(next(iterators),end=" ")

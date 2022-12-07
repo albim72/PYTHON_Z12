@@ -12,7 +12,7 @@ def debugmethods(cls):
     for key,val in vars(cls).items():
         if callable(val):
             setattr(cls,key,debug(val))
-        return cls
+    return cls
 
 class DebugMeta(type):
     def __new__(cls, clsname,bases,attrs):
@@ -32,3 +32,7 @@ class CalcMul(Base):
 
 ml = CalcMul()
 print(ml.mul(4,5))
+
+ad = CalcAdd()
+print(ad.add(45,6))
+

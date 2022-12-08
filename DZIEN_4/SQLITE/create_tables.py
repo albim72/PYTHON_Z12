@@ -12,7 +12,8 @@ def create_table(conn,create_table_sql):
     except Error as e:
         print(e)
 
-def main():
+
+def cr():
     database = r"c:\sqlite\db\mojanowabaza.db"
     sql_create_projects_table = """
             CREATE TABLE IF NOT EXISTS projects (
@@ -34,11 +35,11 @@ def main():
                     FOREIGN KEY (project_id) REFERENCES projects(id)
                 );
         """
-    
+
     conn = create_connection(database)
     if conn is not None:
         create_table(conn,sql_create_projects_table)
         create_table(conn,sql_create_tasks_table)
     else:
         print("Błąd połączenia z bazą danych!")
-        
+        raise

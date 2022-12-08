@@ -60,3 +60,8 @@ kolor = SubElement(wyp_dod,'kolor')
 kolor.text = 'czerwony metallic'
 dodpod = SubElement(wyp_dod,'dodatkowe_poduszki')
 dodpod.text = '4'
+
+print(pretty(top))
+
+with open("subaru.xml","a",encoding="utf-8") as f:
+    f.write(pretty(top))

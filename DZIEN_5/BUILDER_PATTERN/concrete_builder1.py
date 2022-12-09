@@ -16,11 +16,12 @@ class ConcreteBuilder1(Builder):
         self.reset()
         return product
 
-    def produce_part_a(self) -> None:
+    def product_part_a(self) -> None:
         self._product.add("PartA1")
-        
-    def produce_part_b(self) -> None:
+
+    def product_part_b(self) -> None:
         self._product.add("PartB1")
-        
-    def produce_part_c(self) -> None:
+
+    def product_part_c(self) -> None:
         self._product.add("PartC1")
+
